@@ -53,11 +53,34 @@
 						<!-- Work -->
 							<article id="projects">
 								<h2 class="major">Projects</h2>
-								<span class="image main"><img src="images/pic02.jpg" alt="" /></span>
+								<h4>A Changing Landscape: Advanced Graphics Coursework</h4>
+								<p>I was tasked with creating a landscape that changed over time, using C++ and OpenGL. I was given a basic graphics framework, which I built on throughout the module. I chose to theme my scene around the given skeletal mesh for the hellknight from Doom.
+								</p>
 								<iframe style="height:450px;width:100%;" src="https://www.youtube.com/embed/ra7MUHCAdAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+								<p>
+								<ul>
+									<u>Terrain:</u>
+								<li>Heightmap is generated with an index buffer, using a file to read in the heights. It rises over time using a changing uniform passed to the shader</li>
+								<li>Terrain has two textures, each with their respective normal/bump map, and they're blened between one another as time passes.</li>
+								<li>Water is transparent until the heightmap has fully risen, then the alpha component starts to rise so it appears.</li>
+								<li>Spikes are contained in a scene graph, and employ frustum culling to reduce draw calls.</li>
+								<u>Lighting:</u>
+								<li>Point light is used to illuminate the scene, using the Phong reflection model</li>
+								<li>A spotlight is placed at the rear of the scene, and rotates in a circle using a sine wave in it's transform.</li>
+								<li>Dynamic shadow mapping is used on the hellknights in the scene.</li>
+								<li>Cubemap has been utilised for the skybox in the background, and the reflections in the water.</li>
+								<u>Other Features:</u>
+								<li>Gaussian blur is the main post-processing effect I implemented, using ping-pong texturing. </li>
+								<li>Included a very basic split-screen effect, that uses the same camera view in both panels.</li>
+								<li>Basic skeletal animation used with the hellknights.</li>
+								</ul>
+								</p>
+								<hr></hr>
 								<iframe style="height:450px;width:100%;" src="https://www.youtube.com/embed/iZy3u03gMHU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								<p>Adipiscing magna sed dolor elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices.</p>
 								<p>Nullam et orci eu lorem consequat tincidunt vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus pharetra. Pellentesque condimentum sem. In efficitur ligula tate urna. Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor. Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis libero. Mauris aliquet magna magna sed nunc rhoncus amet feugiat tempus.</p>
+
 							</article>
 
 						<!-- About -->

@@ -573,12 +573,13 @@
 		}
 
 	ul {
-		list-style: disc;
+		list-style-type: square;
 		margin: 0 0 1.5em 0;
 		padding-left: 1em;
 	}
 
 		ul li {
+			list-style-type: square;
 			padding-left: 0.5em;
 		}
 
