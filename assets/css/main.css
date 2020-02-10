@@ -375,7 +375,7 @@
 		width: 100%;
 	}
 
-		input[type="text"]:invalid,
+		input[type="text"],
 		input[type="password"]:invalid,
 		input[type="email"]:invalid,
 		input[type="tel"]:invalid,
