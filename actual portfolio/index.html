@@ -45,22 +45,21 @@
 						<!-- Intro -->
 							<article id="about">
 								<h2 class="major">About Me</h2>
-								<span class="image main"><img src="images/pic01.jpg" alt="" /></span>
-								<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. By the way, check out my <a href="#projects">awesome work</a>.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
+								<span class="image main"><img src="images/gradphoto.jpg" alt="" /></span>
+								<p></p>
 							</article>
 
 						<!-- Work -->
 							<article id="projects">
 								<h2 class="major">Projects</h2>
 								<h4>A Changing Landscape: Advanced Graphics Coursework</h4>
-								<p>I was tasked with creating a landscape that changed over time, using C++ and OpenGL. I was given a basic graphics framework, which I built on throughout the module. I chose to theme my scene around the given skeletal mesh for the hellknight from Doom.
+								<p style="font-size:20px">I was tasked with creating a landscape that changed over time, using C++ and OpenGL. I was given a basic graphics framework, which I built on throughout the module. I chose to theme my scene around the given skeletal mesh for the hellknight from Doom.
 								</p>
-								<iframe style="height:450px;width:100%;" src="https://www.youtube.com/embed/ra7MUHCAdAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<p align="center"><iframe style="height:450px;width:80%; float:middle" src="https://www.youtube.com/embed/ra7MUHCAdAI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 								<p>
 								<ul>
-									<u>Terrain:</u>
+								<u>Terrain:</u>
 								<li>Heightmap is generated with an index buffer, using a file to read in the heights. It rises over time using a changing uniform passed to the shader.</li>
 								<li>Terrain has two textures, each with their respective normal/bump map, and they're blened between one another as time passes.</li>
 								<li>Water is transparent until the heightmap has fully risen, then the alpha component starts to rise so it appears.</li>
@@ -79,25 +78,26 @@
 								<hr></hr>
 
 								<h4>Unoriginal Goose Game: Advanced Game Technologies Coursework</h4>
-								<p>The project was based around Untitled Goose Game- The player must collect apples in the game to earn points, whilst avoiding the AI who make the goose drop any item it is holding. I implement the physics and collisions, AI and nwtworking for this project.</p>
-								<iframe style="height:450px;width:100%;" src="https://www.youtube.com/embed/iZy3u03gMHU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+								<p>The project was based around Untitled Goose Game- A player must collect apples in the game to earn points, whilst avoiding the AI who make the goose drop any item it is holding. I implement the physics and collisions, AI and networking for this project.</p>
+								<p align="center"><iframe style="height:450px;width:80%" src="https://www.youtube.com/embed/iZy3u03gMHU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
 
 								<p>
 								<ul>
 									<u>Physics:</u>
-								<li>Linear and angular motion implement</li>
-								<li></li>
-								<li></li>
-								<li></li>
+								<li>Linear and angular motion implemented.</li>
+								<li>AABB and Sphere collision volumes utilised.</li>
+								<li>Made use of Collision layers to reduce the amount of detection tests.</li>
+								<li>Quad Tree spatial accelleration structure used for the broad phase detection.</li>
+								<li>Collisions are resolved by projecting the volumes outwards from collision point along the normal, and then applying an impules in the correct direction to change the velocities.</li>
+								<li>Basic constraint bridge is used in the back of the level to demonstrate more advanced collision resolution.</li>
 								<u>AI:</u>
-								<li>Point light is used to illuminate the scene, using the Phong reflection model</li>
-								<li>A spotlight is placed at the rear of the scene, and rotates in a circle using a sine wave in it's transform.</li>
-								<li>Dynamic shadow mapping is used on the hellknights in the scene.</li>
-								<li>Cubemap has been utilised for the skybox in the background, and the reflections in the water.</li>
+								<li>A finite state machine is used for one AI character, which chases the goose if it's within a 10 unit distance, and then transitions to idle state if the goose is further than 15 units away.</li>
+								<li>Second AI character uses pathfinding to chase the goose if it is holding an item, and if the AI collides with the goose, it drops whatever it was holding.</li>
+								<li>A* is used for the pathfinding. The world grid is represented with a text file that is read in, and if a path is found, a force is applied to the AI to push it towards the fist node in the list.</li>
 								<u>Networking:</u>
-								<li>Gaussian blur is the main post-processing effect I implemented, using ping-pong texturing. </li>
-								<li>Included a very basic split-screen effect, that uses the same camera view in both panels.</li>
-								<li>Basic skeletal animation used with the hellknights.</li>
+								<li>Player can choose to start the game as a client, or as a server.</li>
+								<li>Client sends a packet with their position data, which the server receives and updates accordingly.</li>
+								<li>Client also sends a score packet to the server.</li>
 								</ul>
 								</p>
 								<hr></hr>
@@ -106,38 +106,21 @@
 						<!-- About -->
 							<article id="cv">
 								<h2 class="major">Curriculum Vitae</h2>
-								<span class="image main"><img src="images/pic03.jpg" alt="" /></span>
-								<p>Lorem ipsum dolor sit amet, consectetur et adipiscing elit. Praesent eleifend dignissim arcu, at eleifend sapien imperdiet ac. Aliquam erat volutpat. Praesent urna nisi, fringila lorem et vehicula lacinia quam. Integer sollicitudin mauris nec lorem luctus ultrices. Aliquam libero et malesuada fames ac ante ipsum primis in faucibus. Cras viverra ligula sit amet ex mollis mattis lorem ipsum dolor sit amet.</p>
+								<p>
+									<embed src="\\campus\home\Home2015\b5005533\Games MSc\Portfolio\epreston7.github.io\actual portfolio/CV_PDF.pdf" type="application/pdf" width="100%" height="1200px" />
+								</p>
 							</article>
 
 						<!-- Contact -->
 							<article id="contact">
 								<h2 class="major">Contact</h2>
-								<form method="post" action="#">
-									<div class="fields">
-										<div class="field half">
-											<label for="name">Name</label>
-											<input type="text" name="name" id="name" />
-										</div>
-										<div class="field half">
-											<label for="email">Email</label>
-											<input type="text" name="email" id="email" />
-										</div>
-										<div class="field">
-											<label for="message">Message</label>
-											<textarea name="message" id="message" rows="4"></textarea>
-										</div>
-									</div>
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</form>
+
 								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+									<li style="display: inline;padding-right: 120px"><a href="tel:+447591491036" class="fas fa-phone"></a> &nbsp (+44) 7591 491 036</li>
+									<li style="display: inline"><a href="https://www.linkedin.com/in/epreston72/" class="icon brands fa-linkedin"></a> &nbsp LinkedIn </li>
+									<li></li>
+									<li style="display: inline"><a href="mailto:elizapreston@hotmail.co.uk" class="fas fa-envelope"></a>  &nbsp elizapreston@hotmail.co.uk</li>
+									<li style="display: inline"><a href="#" class="icon brands fa-github"></a> &nbsp GitHub</li>
 								</ul>
 							</article>
 
@@ -387,7 +370,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 				<!-- Footer -->
 					<footer id="footer">
-						<p class="copyright">&copy; Untitled. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
+						<p class="copyright">&copy; Elizabeth Preston. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
 					</footer>
 
 			</div>
